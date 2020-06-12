@@ -3,7 +3,7 @@ import React from "react";
 export default class QueryInputForm extends React.Component{
 
 
-    defaultProps = {
+    static defaultProps = {
         queryOnSubmitHandler : () => console.log("No Query Handler added yet"),
         defaultQueryValue: null,
         defaultPlaceholderText: "g.V().toList();"
@@ -17,7 +17,7 @@ export default class QueryInputForm extends React.Component{
     render() {
         return (
             <div className={"queryInputForm"}>
-                <form action="" onSubmit={this.props.onFormSubmit}>
+                <form onSubmit={this.onFormSubmit.bind(this)}>
                     <input name={"query"} type="text" placeholder={this.props.defaultPlaceholderText}
                            defaultValue={this.props.defaultQueryValue}/>
                 </form>
@@ -36,7 +36,7 @@ export  class QueryTextAreaForm extends React.Component{
     render() {
         return (
             <div className={"queryInputForm"}>
-                <form action="" onSubmit={this.props.queryOnSubmitHandler}>
+                <form onSubmit={this.props.queryOnSubmitHandler}>
                     <textarea>{this.props.defaultQueryValue}</textarea>
                 </form>
             </div>
