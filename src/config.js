@@ -2,6 +2,7 @@
 export const gremlinServerUrlKey = "GREMLIN_SERVER_URL";
 export const GREMLIN_SERVER_URL = localStorage.getItem(gremlinServerUrlKey);
 export const DefaultMaxTimeElapsedWarningInSeconds = 180;
+export const DefaultConnectionRetryTimeout = 10;
 
 export const CONNECT_URL= "/";
 export const UUIDGenerator = () =>

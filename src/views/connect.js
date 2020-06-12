@@ -1,0 +1,4 @@
+/*
+This is the first view user visits to input gremlin server url and start browsing.
+
+ */
