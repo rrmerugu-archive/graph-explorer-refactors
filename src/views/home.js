@@ -4,12 +4,16 @@ import MainTopNav from "../core/ui/nav/top";
 
 export default class HomeView extends React.Component {
 
+    onQuerySubmit(query) {
+        alert("Query is " + query);
+    }
+
     render() {
         return (
             <div>
 
                 <LeftNav/>
-                <MainTopNav />
+                <MainTopNav onQuerySubmit={this.onQuerySubmit.bind(this)}/>
 
             </div>
         )

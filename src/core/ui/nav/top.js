@@ -1,6 +1,6 @@
 import React from "react";
 import "./top.scss";
-import {faSearch, faBookmark, faStar} from "@fortawesome/free-solid-svg-icons";
+import {faSearch, faBookmark, faStar, faBook} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import QueryInputForm from "../form/query-forms";
 
@@ -10,19 +10,19 @@ export default class MainTopNav extends React.Component {
         return (
             <div className={"mainTopNav"}>
                 <div className="left-side">
-                    <a href="/"><h1>Graph Explorer</h1></a>
+                    <a href="/" className={"logo"}><h1>Graph Explorer</h1></a>
                 </div>
                 <div className="right-side">
                     <ul>
-                        {/*<li>*/}
-                        {/*    <a href="#">*/}
-                        {/*        <FontAwesomeIcon icon={faStar}/>*/}
-                        {/*    </a>*/}
-                        {/*</li>*/}
-                        <li>
-                            <QueryInputForm/>
-                        </li>
 
+                        <li>
+                            <QueryInputForm onQuerySubmit={this.props.onQuerySubmit}/>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <FontAwesomeIcon icon={faBook}/>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

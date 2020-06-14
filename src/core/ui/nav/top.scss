@@ -12,8 +12,14 @@
   box-shadow: -2px 1px 6px 1px #1f2230;
   color: #efefef;
 
+  .logo {
+    padding-left: 15px;
+  }
+
 
   .left-side {
+    display: inline-flex;
+
     h1 {
       font-size: 18px;
       margin-top: 10px;
@@ -28,6 +34,7 @@
     float: right;
     //margin-top: -5px;
     margin-top: 1px;
+    display: inline-flex;
   }
 
 

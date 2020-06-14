@@ -1,0 +1,21 @@
+
+.leftNav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50px;
+  border-right: 1px solid #1f2230;
+  background-color: #222222;
+  height: 100vh;
+  //box-shadow: -2px 1px 6px 1px #1f2230;
+
+  .bottom {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+

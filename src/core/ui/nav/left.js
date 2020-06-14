@@ -9,45 +9,8 @@ import {
     faSignInAlt
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import "./left.scss";
 
-const mainNavigationStyle = {
-    position: 'fixed',
-    left: '0',
-    top: '0',
-    width: '50px',
-    borderRight: '1px solid #1f2230',
-    backgroundColor: '#222222',
-    height: '100vh',
-    boxShadow: "-2px 1px 6px 1px #1f2230"
-};
-const mainNavLi = {
-    // "display": "block",
-    "paddingTop": "5px",
-    "paddingBottom": "5px",
-    "display": "flex",
-    "alignItems": "center",
-    "justifyContent": "center",
-    "height": "33px",
-    "borderBottom": "1px solid #3b3e4c"
-
-}
-const mainNavUl = {
-    "padding": "0",
-    "margin": "0"
-}
-const mainNavUlBottom = {
-    "padding": "0",
-    "margin": "0",
-    "position": "absolute",
-    "bottom": "0",
-    "width": "100%"
-}
-const mainNavLiA = {
-    "color": "#efefef",
-    "textDecoration": "none",
-    "fontSize": "12px"
-
-}
 
 export default class LeftNav extends React.Component {
 
@@ -55,56 +18,53 @@ export default class LeftNav extends React.Component {
     render() {
 
         return (
-            <div id="mainNavigation" style={mainNavigationStyle}>
-                <ul style={mainNavUl}>
-                    {/*<a style={mainNavLiA} href="/">*/}
-                    {/*    <li style={mainNavLiA}>*/}
-                    {/*        <FontAwesomeIcon icon={faHome}/>*/}
-                    {/*    </li>*/}
-                    {/*</a>*/}
-
-
-                    <a style={mainNavLiA} href="/" title={"Graph Visualiser"}>
-                        <li style={mainNavLi}>
+            <div id="mainNavigation" className={"leftNav"}>
+                <ul className={"vertical"}>
+                    <li>
+                        <a href="/" title={"Graph Visualiser"}>
                             <FontAwesomeIcon icon={faHome}/>
-                        </li>
-                    </a>
-                    <a style={mainNavLiA} href="/console" title={"Query Console"}>
-                        <li style={mainNavLi}>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/console" title={"Query Console"}>
                             <FontAwesomeIcon icon={faTerminal}/>
-                        </li>
-                    </a>
-                    <a style={mainNavLiA} href="/history" title={"History"}>
-                        <li style={mainNavLi}>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/history" title={"History"}>
+
                             <FontAwesomeIcon icon={faHistory}/>
-                        </li>
-                    </a>
-                    <a style={mainNavLiA} href="/management" title={"Management"}>
-                        <li style={mainNavLi}>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/management" title={"Management"}>
                             <FontAwesomeIcon icon={faCog}/>
-                        </li>
-                    </a>
-
+                        </a>
+                    </li>
                 </ul>
-                <ul style={mainNavUlBottom}>
+                <ul className={"bottom vertical"}>
+                    <li>
+                        <a href="/about" title={"Support/Documentation"}>
 
-                    <a style={mainNavLiA} href="/about" title={"Support/Documentation"}>
-                        <li style={mainNavLi}>
                             <FontAwesomeIcon icon={faQuestionCircle}/>
-                        </li>
-                    </a>
-                    <a style={mainNavLiA}
-                       target={"_new"} title={"Support / Report Issues"}
-                       href="https://github.com/invanalabs/graph-explorer/issues">
-                        <li style={mainNavLi}>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            target={"_new"} title={"Support / Report Issues"}
+                            href="https://github.com/invanalabs/graph-explorer/issues">
+
                             <FontAwesomeIcon icon={faBug}/>
-                        </li>
-                    </a>
-                    <a style={mainNavLiA} href={"/switch-server"} title={"Switch Server"}>
-                        <li style={mainNavLi}>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href={"/switch-server"} title={"Switch Server"}>
+
                             <FontAwesomeIcon icon={faSignInAlt}/>
-                        </li>
-                    </a>
+                        </a>
+                    </li>
                 </ul>
             </div>
         )

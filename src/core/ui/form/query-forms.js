@@ -7,14 +7,14 @@ export default class QueryInputForm extends React.Component {
 
 
     static defaultProps = {
-        queryOnSubmitHandler: () => console.log("No Query Handler added yet"),
+        onQuerySubmit: () => console.log("No Query Handler added yet"),
         defaultQueryValue: null,
         defaultPlaceholderText: "g.V().toList();"
     }
 
     onFormSubmit(e) {
         e.preventDefault();
-        this.props.queryOnSubmitHandler(e.target.query.value);
+        this.props.onQuerySubmit(e.target.query.value);
     }
 
     render() {
