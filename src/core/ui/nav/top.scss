@@ -1,0 +1,35 @@
+.mainTopNav {
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #333333;
+  /*width: calc(100% - 50px);*/
+  width: calc(100% - 4px);
+  /*left: 50px;*/
+  height: 40px;
+  padding: 2px;
+  border-bottom: 1px solid #393b48;
+  background-color: #222222;
+  box-shadow: -2px 1px 6px 1px #1f2230;
+  color: #efefef;
+
+
+  .left-side {
+    h1 {
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    float: left;
+  }
+
+
+  .right-side {
+    float: right;
+    //margin-top: -5px;
+    margin-top: 1px;
+  }
+
+
+}
+

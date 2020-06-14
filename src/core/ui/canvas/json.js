@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default class JSONViewComponent extends React.Component {
+export default class JSONCanvas extends React.Component {
 
     static defaultProps = {
         data: null

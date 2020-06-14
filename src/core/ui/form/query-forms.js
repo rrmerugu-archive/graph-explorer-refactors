@@ -1,10 +1,13 @@
 import React from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import "./query-forms.scss";
 
-export default class QueryInputForm extends React.Component{
+export default class QueryInputForm extends React.Component {
 
 
     static defaultProps = {
-        queryOnSubmitHandler : () => console.log("No Query Handler added yet"),
+        queryOnSubmitHandler: () => console.log("No Query Handler added yet"),
         defaultQueryValue: null,
         defaultPlaceholderText: "g.V().toList();"
     }
@@ -20,16 +23,18 @@ export default class QueryInputForm extends React.Component{
                 <form onSubmit={this.onFormSubmit.bind(this)}>
                     <input name={"query"} type="text" placeholder={this.props.defaultPlaceholderText}
                            defaultValue={this.props.defaultQueryValue}/>
+                    <button type={"submit"}><FontAwesomeIcon icon={faSearch}/></button>
+
                 </form>
             </div>
         );
     }
 }
 
-export  class QueryTextAreaForm extends React.Component{
+export class QueryTextAreaForm extends React.Component {
 
     defaultProps = {
-        queryOnSubmitHandler : () => console.log("No Query Handler added yet"),
+        queryOnSubmitHandler: () => console.log("No Query Handler added yet"),
         defaultQueryValue: null
     }
 
