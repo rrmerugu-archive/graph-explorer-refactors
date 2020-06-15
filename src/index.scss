@@ -7,9 +7,23 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $canvasBgColor;
+  //background-color: $canvasBgColor;
+  font-size: 14px;
 }
 
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $lightDarkBgColor inset !important;
+
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: $defaultTextColor !important;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -58,18 +72,20 @@ ul.vertical {
 form {
   input {
     padding: 10px 10px;
-    background: #333333;
-    border: 1px solid #373945;
+    background: $lightDarkBgColor;
+    border: 1px solid $borderColor;
     outline: none;
     color: white;
-    fill: #333333;
+    fill: $lightDarkBgColor;
+    font-size: 16px;
+    letter-spacing: 1px;
 
 
     :hover, :focus, :active {
-      background: #333333;
-      border-color: #393b48;
+      background: $lightDarkBgColor;
+      border-color: $borderColor;
       outline: none;
-          fill: #333333;
+      fill: $lightDarkBgColor;
 
     }
   }
@@ -82,18 +98,19 @@ button {
   //outline: none;
   //color: #efefef;
   //cursor: pointer;
-  padding: 11px 15px;
-  background: #464646;
-  border: transparent;
+  padding: 13px 15px;
+  background: $lightDarkBgColor;
+  border: 1px solid $borderColor;
   outline: none;
   color: $defaultTextColor;
   cursor: pointer;
+  max-height: 40px;
 
   :hover {
     //background: red !important;
     cursor: pointer;
     //outline: none;
-      color: $primaryColor;
+    color: $primaryColor;
 
   }
 

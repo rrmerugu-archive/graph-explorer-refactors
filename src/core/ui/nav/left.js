@@ -7,7 +7,8 @@ import {
     faBug,
     faStar,
     faHistory,
-    faSignInAlt
+    faSignInAlt,
+    faLifeRing
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./left.scss";
@@ -47,7 +48,8 @@ export default class LeftNav extends React.Component {
                     <li>
                         <a href="/about" title={"Support/Documentation"}>
 
-                            <FontAwesomeIcon icon={faQuestionCircle}/>
+                            {/*<FontAwesomeIcon icon={faQuestionCircle}/>*/}
+                            <FontAwesomeIcon icon={faLifeRing}/>
 
                         </a>
                     </li>
