@@ -1,9 +1,7 @@
 import React from "react";
 import {
-    faHome,
-    faTerminal,
+
     faCog,
-    faQuestionCircle,
     faBug,
     faStar,
     faHistory,

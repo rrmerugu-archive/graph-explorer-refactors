@@ -1,6 +1,6 @@
 import React from "react";
 import "./top.scss";
-import {faSearch, faBookmark, faStar, faBook} from "@fortawesome/free-solid-svg-icons";
+import {faBook} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import QueryInputForm from "../form/query-forms";
 import {VERSION} from "../../../config";
@@ -20,7 +20,7 @@ export default class MainTopNav extends React.Component {
                             <QueryInputForm onQuerySubmit={this.props.onQuerySubmit}/>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/learn">
                                 <FontAwesomeIcon icon={faBook}/>
                             </a>
                         </li>
