@@ -1,17 +1,25 @@
 import React from "react";
-import LeftNav from "../core/ui/nav/left";
-import MainTopNav from "../core/ui/nav/top";
+import MainLeftNav from "../core/ui/structure/left";
+import MainHeaderNav from "../core/ui/structure/header";
 import MainContent from "../core/ui/main-content";
 import JSONCanvas from "../core/ui/canvas/json";
+import Welcome from "../core/ui/welcome";
 import GremlinConnectorComponent from "../core/gremlin-connector";
 
 export default class HomeView extends GremlinConnectorComponent {
 
 
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         data: null
+    //     }
+    // }
+
     constructor(props) {
         super(props);
         this.state = {
-            data: null
+            data:null
         }
     }
 
@@ -32,10 +40,29 @@ export default class HomeView extends GremlinConnectorComponent {
         const parentHTML = super.render();
         return (
             <div>
-                <LeftNav/>
-                <MainTopNav onQuerySubmit={this.onQuerySubmit.bind(this)}/>
+                <MainLeftNav/>
+                <MainHeaderNav onQuerySubmit={this.onQuerySubmit.bind(this)}/>
                 <MainContent>
-                    <JSONCanvas data={this.state.data}/>
+                    {(() => {
+                        if (this.state.canvasType === "graph") {
+                            return (
+                                <div>Graph</div>
+                            )
+                        } else if (this.state.canvasType === "table") {
+                            return (
+                                <div>table</div>
+                            )
+                        }  else if (this.state.canvasType === "json") {
+                            return (
+                                <JSONCanvas data={this.state.data}/>
+                            )
+                        } else {
+                            return (
+                                <Welcome />
+                            )
+                        }
+                    })()}
+
                 </MainContent>
                 {parentHTML}
             </div>

@@ -1,15 +1,15 @@
 import React from "react";
-import "./top.scss";
+import "./header.scss";
 import {faBook} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import QueryInputForm from "../form/query-forms";
 import {VERSION} from "../../../config";
 
-export default class MainTopNav extends React.Component {
+export default class MainHeaderNav extends React.Component {
 
     render() {
         return (
-            <div className={"mainTopNav"}>
+            <div className={"MainHeaderNav"}>
                 <div className="left-side">
                     <a href="/" className={"logo"}><h1>Graph Explorer <small>{VERSION}</small></h1></a>
                 </div>

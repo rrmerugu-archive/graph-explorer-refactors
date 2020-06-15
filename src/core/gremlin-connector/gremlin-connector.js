@@ -6,6 +6,7 @@ import {
 } from "../../config";
 import {ConnectionStatusComponent} from "./index";
 import Footer from "../ui/footer";
+import SecondaryHeader from "../ui/structure/secondary-header";
 
 export default class GremlinConnectorComponent extends React.Component {
 
@@ -53,7 +54,8 @@ export default class GremlinConnectorComponent extends React.Component {
             queryElapsedTimeCounter: 0,
             isQuerying: false,
             isConnected2Gremlin: false,
-            statusMessage: null
+            statusMessage: null,
+            canvasType: "graph"
         }
     }
 
@@ -61,7 +63,7 @@ export default class GremlinConnectorComponent extends React.Component {
         this.setupWebSocket();
     }
 
-    reconnect(){
+    reconnect() {
         this.ws = this.createWebSocket();
         this.connect();
     }
@@ -128,6 +130,7 @@ export default class GremlinConnectorComponent extends React.Component {
     //     }
     // }
 
+
     setupWebSocket() {
         let _this = this;
         console.log("setupWebSocket triggered===========================")
@@ -139,6 +142,7 @@ export default class GremlinConnectorComponent extends React.Component {
             // on connecting, do nothing but log it to the console
             console.log('connected')
             _this.setIsConnected2Gremlin(true);
+            _this.setStatusMessage("Connected");
         }
 
         this.ws.onmessage = event => {
@@ -157,7 +161,7 @@ export default class GremlinConnectorComponent extends React.Component {
             let timer = setInterval((function () {
                     i += 1;
                     console.log(i)
-                    _this.setStatusMessage("Reconnecting... waiting for "+DefaultConnectionRetryTimeout+"s. (" + i + "s elapsed)");
+                    _this.setStatusMessage("Reconnecting... waiting for " + DefaultConnectionRetryTimeout + "s. (" + i + "s elapsed)");
                     if (i > DefaultConnectionRetryTimeout) {
                         clearInterval(timer);
                         _this.reconnect();
@@ -229,14 +233,35 @@ export default class GremlinConnectorComponent extends React.Component {
         this.connect();
     }
 
+    switchCanvasTo(canvasType) {
+        this.setState({
+            canvasType: canvasType
+        })
+    }
+
     render() {
         return (
-            <Footer>
-                <ConnectionStatusComponent
-                    statusMessage={this.state.statusMessage}
-                    isConnected2Gremlin={this.state.isConnected2Gremlin}
-                />
-            </Footer>
+            <div>
+                <Footer>
+                    <ConnectionStatusComponent
+                        statusMessage={this.state.statusMessage}
+                        isConnected2Gremlin={this.state.isConnected2Gremlin}
+                    />
+                </Footer>
+
+                <SecondaryHeader>
+                    {
+                        (this.state.data)
+                            ? <ul>
+                                <li><a onClick={() => this.switchCanvasTo("graph")}>Graph</a></li>
+                                <li><a onClick={() => this.switchCanvasTo("table")}>Table</a></li>
+                                <li><a onClick={() => this.switchCanvasTo("json")}>JSON</a></li>
+                            </ul>
+                            : <span> Welcome to Graph Explorer Beta. </span>
+                    }
+
+                </SecondaryHeader>
+            </div>
         )
 
     }

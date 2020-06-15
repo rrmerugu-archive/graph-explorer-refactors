@@ -12,8 +12,8 @@ export default class ConnectionIndicatorComponent extends React.Component{
             <span>
                 {
                     (this.props.isConnected2Gremlin === true)
-                        ? <span className={"connected ConnectionIndicatorComponent"}></span>
-                        : <span className={"notConnected ConnectionIndicatorComponent"}></span>
+                        ? <span className={"connected connectionIndicator"}></span>
+                        : <span className={"notConnected connectionIndicator"}></span>
                 }
             </span>
         )

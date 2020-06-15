@@ -12,13 +12,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./left.scss";
 
 
-export default class LeftNav extends React.Component {
+export default class MainLeftNav extends React.Component {
 
 
     render() {
 
         return (
-            <div id="mainNavigation" className={"leftNav"}>
+            <div className={"mainLeftNav"}>
                 <ul className={"vertical"}>
                     <li>
                         <a href="/" title={"Graph Visualiser"}>
