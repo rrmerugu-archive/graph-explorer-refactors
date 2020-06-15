@@ -32,7 +32,7 @@ export default class HomeView extends GremlinConnectorComponent {
 
     processResponse(responses) {
         this.setState({
-            data: JSON.stringify(responses, null, 4)
+            data: responses
         })
     }
 

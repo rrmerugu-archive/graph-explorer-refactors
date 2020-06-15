@@ -1,5 +1,6 @@
 import React from "react";
-
+import ReactJson from 'react-json-view'
+import "./json.scss";
 
 export default class JSONCanvas extends React.Component {
 
@@ -10,7 +11,9 @@ export default class JSONCanvas extends React.Component {
     render() {
         return (
             <div className={"jsonView"}>
-                {this.props.data}
+
+                <ReactJson theme="monokai" style={{"backgroundColor": "transparent"}} src={this.props.data}/>
+
             </div>
         )
     }
