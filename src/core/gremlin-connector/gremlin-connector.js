@@ -61,6 +61,11 @@ export default class GremlinConnectorComponent extends React.Component {
         this.setupWebSocket();
     }
 
+    reconnect(){
+        this.ws = this.createWebSocket();
+        this.connect();
+    }
+
     setIsConnected2Gremlin(status) {
         // this.props.eventHandler({isConnected2Gremlin: status});
         console.log("setIsConnected2Gremlin", status)
@@ -151,10 +156,11 @@ export default class GremlinConnectorComponent extends React.Component {
             let i = 0;
             let timer = setInterval((function () {
                     i += 1;
-                    _this.setStatusMessage("Connection Attempt Failed. Waited " + i + "s of " + (DefaultConnectionRetryTimeout) + "s 'retry in' time...");
+                    console.log(i)
+                    _this.setStatusMessage("Reconnecting... waiting for "+DefaultConnectionRetryTimeout+"s. (" + i + "s elapsed)");
                     if (i > DefaultConnectionRetryTimeout) {
                         clearInterval(timer);
-                        _this.connect();
+                        _this.reconnect();
                     }
                 }
             ), 1000); // retry in 5 seconds
@@ -163,6 +169,7 @@ export default class GremlinConnectorComponent extends React.Component {
     }
 
     startTimer() {
+        console.log("Timer started")
         this.setQueryElapsedTimeCounter(0);
         let _this = this;
         let timer = setInterval((function () {
