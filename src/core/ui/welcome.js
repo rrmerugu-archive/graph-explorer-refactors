@@ -13,8 +13,9 @@ export default class Welcome extends React.Component{
                         <a onClick={()=> alert("not implemented yet.")}>1. Create sample data</a>
                     </li>
                       <li>
-                        <a onClick={()=> alert("not implemented yet")}>2. Your first graph query</a>
+                        <a onClick={()=> this.props.makeQuery("g.V().limit(10).toList();")}>2. Your first graph query - g.V().limit(10).toList();</a>
                     </li>
+
                 </ul>
             </Modal>
         )

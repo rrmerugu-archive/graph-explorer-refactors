@@ -19,7 +19,8 @@ export default class HomeView extends GremlinConnectorComponent {
     constructor(props) {
         super(props);
         this.state = {
-            data:null
+            data:null,
+            canvasType: "graph"
         }
     }
 
@@ -44,21 +45,21 @@ export default class HomeView extends GremlinConnectorComponent {
                 <MainHeaderNav onQuerySubmit={this.onQuerySubmit.bind(this)}/>
                 <MainContent>
                     {(() => {
-                        if (this.state.canvasType === "graph") {
+                        if (this.state.canvasType === "graph" && this.state.data) {
                             return (
                                 <div>Graph</div>
                             )
-                        } else if (this.state.canvasType === "table") {
+                        } else if (this.state.canvasType === "table" && this.state.data) {
                             return (
                                 <div>table</div>
                             )
-                        }  else if (this.state.canvasType === "json") {
+                        }  else if (this.state.canvasType === "json" && this.state.data) {
                             return (
                                 <JSONCanvas data={this.state.data}/>
                             )
                         } else {
                             return (
-                                <Welcome />
+                                <Welcome makeQuery={this.makeQuery.bind(this)}/>
                             )
                         }
                     })()}
