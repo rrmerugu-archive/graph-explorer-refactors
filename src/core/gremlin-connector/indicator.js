@@ -1,5 +1,5 @@
 import React from "react";
-import "./indicator.css";
+import "./indicator.scss";
 
 export default class ConnectionIndicatorComponent extends React.Component{
 
@@ -10,7 +10,6 @@ export default class ConnectionIndicatorComponent extends React.Component{
     render() {
         return (
             <span>
-             ||     {this.props.isConnected2Gremlin}     ||
                 {
                     (this.props.isConnected2Gremlin === true)
                         ? <span className={"connected ConnectionIndicatorComponent"}></span>

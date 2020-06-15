@@ -4,23 +4,27 @@ import {
     DefaultConnectionRetryTimeout,
     DefaultMaxTimeElapsedWarningInSeconds, GREMLIN_SERVER_URL
 } from "../../config";
-
+import {ConnectionStatusComponent} from "./index";
+import Footer from "../ui/footer";
 
 export default class GremlinConnectorComponent extends React.Component {
 
     /*
-    Use this component when you need
-
-
-
+    Use this component when you need gremlin server connect and query feature.
     Usage:
-
 
             export default class ConsoleView extends GremlinConnectorComponent{
 
                 componentDidMount() {
                     super.componentDidMount();
                 }
+
+                // to make query
+                makeQuery(query);
+
+                // to get the list of responses of the query
+                processResponse(responses);
+
             }
 
 
@@ -31,7 +35,7 @@ export default class GremlinConnectorComponent extends React.Component {
 
     ws = this.createWebSocket();
 
-    createWebSocket(){
+    createWebSocket() {
         return new WebSocket(this.props.gremlinUrl);
     }
 
@@ -54,7 +58,7 @@ export default class GremlinConnectorComponent extends React.Component {
     }
 
     connect() {
-      this.setupWebSocket();
+        this.setupWebSocket();
     }
 
     setIsConnected2Gremlin(status) {
@@ -86,7 +90,8 @@ export default class GremlinConnectorComponent extends React.Component {
 
     processResponse(responses) {
         console.log("Attention response handler is not set for this component :(. " +
-            "responses is a list of responses from server.", responses);
+            "This method will return responses list(list of responses to support stream of responses )" +
+            " for the query.", responses);
     }
 
     updateTimer(timerCount, isMaxTimeElapsed) {
@@ -215,6 +220,18 @@ export default class GremlinConnectorComponent extends React.Component {
 
     componentDidMount() {
         this.connect();
+    }
+
+    render() {
+        return (
+            <Footer>
+                <ConnectionStatusComponent
+                    statusMessage={this.state.statusMessage}
+                    isConnected2Gremlin={this.state.isConnected2Gremlin}
+                />
+            </Footer>
+        )
+
     }
 
 

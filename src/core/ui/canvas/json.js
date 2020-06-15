@@ -10,6 +10,8 @@ export default class JSONCanvas extends React.Component {
     render() {
         return (
             <div className={"jsonView"}>
+                <h1>JSON view here</h1>
+                <hr/>
                 {this.props.data}
             </div>
         )
