@@ -1,16 +1,17 @@
+@import "../../../config";
+
 .mainTopNav {
   position: fixed;
   top: 0;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid $borderColor;
   /*width: calc(100% - 50px);*/
   width: calc(100% - 4px);
   /*left: 50px;*/
   height: 40px;
   padding: 2px;
-  border-bottom: 1px solid #393b48;
-  background-color: #222222;
+  background-color: $darkColor;
   box-shadow: -2px 1px 6px 1px #1f2230;
-  color: #efefef;
+  color: $defaultTextColor;
 
   .logo {
     padding-left: 15px;
@@ -32,7 +33,6 @@
 
   .right-side {
     float: right;
-    //margin-top: -5px;
     margin-top: 1px;
     display: inline-flex;
   }

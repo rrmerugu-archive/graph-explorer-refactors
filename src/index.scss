@@ -1,3 +1,4 @@
+@import "config";
 
 body {
   margin: 0;
@@ -6,7 +7,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #24262d;
+  background-color: $canvasBgColor;
 }
 
 
@@ -26,12 +27,12 @@ ul {
 
   li {
     display: inline-block;
-    border-right: 1px solid #393b48;
+    border-left: 1px solid $borderColor;
 
     a {
       padding: 10px 15px;
       display: inline-block;
-      color: #4c4c4c;
+      color: $defaultTextColor;
       font-size: 14px;
     }
 
@@ -45,7 +46,7 @@ ul.vertical {
   li {
     display: block;
     border: none;
-    border-bottom: 1px solid #393b48;
+    border-bottom: 1px solid $borderColor;
 
     a {
       padding: 15px 17px;
@@ -61,11 +62,15 @@ form {
     border: 1px solid #373945;
     outline: none;
     color: white;
+    fill: #333333;
 
-    :hover:focus:active {
+
+    :hover, :focus, :active {
       background: #333333;
       border-color: #393b48;
       outline: none;
+          fill: #333333;
+
     }
   }
 }
@@ -81,14 +86,14 @@ button {
   background: #464646;
   border: transparent;
   outline: none;
-  color: #efefef;
+  color: $defaultTextColor;
   cursor: pointer;
 
   :hover {
     //background: red !important;
     cursor: pointer;
     //outline: none;
-      color: #6aaa53;
+      color: $primaryColor;
 
   }
 

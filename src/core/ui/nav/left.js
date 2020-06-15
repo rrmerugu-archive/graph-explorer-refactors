@@ -5,6 +5,7 @@ import {
     faCog,
     faQuestionCircle,
     faBug,
+    faStar,
     faHistory,
     faSignInAlt
 } from "@fortawesome/free-solid-svg-icons";
@@ -22,14 +23,14 @@ export default class LeftNav extends React.Component {
                 <ul className={"vertical"}>
                     <li>
                         <a href="/" title={"Graph Visualiser"}>
-                            <FontAwesomeIcon icon={faHome}/>
+                            <FontAwesomeIcon icon={faStar}/>
                         </a>
                     </li>
-                    <li>
-                        <a href="/console" title={"Query Console"}>
-                            <FontAwesomeIcon icon={faTerminal}/>
-                        </a>
-                    </li>
+                    {/*<li>*/}
+                    {/*    <a href="/console" title={"Query Console"}>*/}
+                    {/*        <FontAwesomeIcon icon={faStar}/>*/}
+                    {/*    </a>*/}
+                    {/*</li>*/}
                     <li>
                         <a href="/history" title={"History"}>
 

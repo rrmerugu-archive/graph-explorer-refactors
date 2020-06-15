@@ -1,13 +1,17 @@
+@import "../../../config";
+
 
 .leftNav {
+  //box-shadow: -2px 1px 6px 1px #1f2230;
   position: fixed;
   left: 0;
-  top: 0;
+  top: 45px;
   width: 50px;
-  border-right: 1px solid #1f2230;
-  background-color: #222222;
-  height: 100vh;
-  //box-shadow: -2px 1px 6px 1px #1f2230;
+  border-right: 1px solid $borderColor;
+  background-color: $darkColor;
+  height: calc(100vh - 45px);
+  color: $defaultTextColor;
+
 
   .bottom {
     padding: 0;
